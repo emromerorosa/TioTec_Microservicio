@@ -35,6 +35,7 @@ public class TareaController {
     // POST /tareas -> crea una tarea nueva
     @PostMapping
     public Tarea crear(@RequestBody Tarea tarea) {
+        System.out.println("Tarea creada" + tarea.getTitle());
         tarea.setId(null); // para que la base de datos asigne el id
         return repository.save(tarea);
     }
